@@ -1,0 +1,33 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * COMMA: COMmand-line MAnager
+ * Bootstrap script for Temma command-line execution manager.
+ *
+ * Usage:
+ *     bin/comma help
+ *     bin/comma help controller
+ *     bin/comma help '\namespace\controller'
+ *     bin/comma controller [action [--param1=value1] [--param2=value2]...]
+ *     bin/comma '\namespace\controller' [action [--param1=value1] [--param2=value2]...]
+ *     bin/comma [nostderr] [conf=/path/to/temma.php] [inc=/path/to/include] controller [action [--param1=value1] [--param2=value2]...]
+ *     bin/comma [nostderr] [conf=/path/to/temma.php] [inc=/path/to/include] '\namespace\controller' [action [--param1=value1] [--param2=value2]...]
+ * @author	Amaury Bouchard <amaury@amaury.net>
+ * @copyright	© 2023-2024, Aamury Bouchard
+ * @link	https://www.temma.net/documentation/cli
+ */
+
+// Composer autoload
+@include_once(__DIR__ . '/../vendor/autoload.php');
+
+// Temma autoloader with include path
+@include_once(__DIR__ . '/../lib/Temma/Base/Autoload.php');
+\Temma\Base\Autoload::autoload([
+	__DIR__ . '/../lib',
+	__DIR__ . '/../cli',
+]);
+
+// Comma execution
+\Temma\Comma\Comma::exec();
+

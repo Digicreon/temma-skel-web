@@ -1,0 +1,34 @@
+{
+	"name": "digicreon/temma-skel-web",
+	"type": "project",
+	"description": "Temma skeleton app for web projects",
+	"homepage": "https://www.temma.net/",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Temma Community",
+			"homepage": "https://www.temma.net/"
+		}
+	],
+	"require": {
+		"php": ">=8.0",
+		"digicreon/temma-lib": "*",
+		"smarty/smarty": ">=5.4.0"
+	},
+	"config": {
+		"platform-check": true,
+		"sort-packages": true
+	},
+	"scripts": {
+		"post-create-project-cmd": [
+			"chmod +x vendor/digicreon/temma-lib/bin/comma",
+			"chmod 777 log tmp",
+			"ln -s vendor/digicreon/temma-lib/lib/smarty-plugins lib/smarty-plugins"
+		]
+	},
+	"support": {
+		"source": "https://github.com/Digicreon/Temma",
+		"forum": "https://github.com/Digicreon/discussions",
+		"issues": "https://github.com/Digicreon/Temma/issues"
+	}
+}

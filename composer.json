@@ -21,7 +21,7 @@
 	},
 	"scripts": {
 		"post-create-project-cmd": [
-			"chmod +x vendor/digicreon/temma-lib/bin/comma",
+			"chmod +x bin/comma",
 			"chmod 777 log tmp",
 			"ln -s vendor/digicreon/temma-lib/lib/smarty-plugins lib/smarty-plugins"
 		]

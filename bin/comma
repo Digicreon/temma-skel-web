@@ -29,5 +29,6 @@
 ]);
 
 // Comma execution
-\Temma\Comma\Comma::exec();
+$comma = new \Temma\Comma\Comma(__DIR__ . '/..');
+$comma->exec();
 
